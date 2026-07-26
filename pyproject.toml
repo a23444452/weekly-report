@@ -1,0 +1,17 @@
+[project]
+name = "weekly-report"
+version = "0.1.0"
+description = "從 GitLab 收集個人週活動，經 Claude Code 摘要後透過 PPT_Generator 產出週報簡報"
+requires-python = ">=3.10"
+dependencies = [
+    "requests>=2.31",
+    "pyyaml>=6.0",
+]
+
+[dependency-groups]
+dev = [
+    "pytest>=8.0",
+]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]

@@ -1,0 +1,28 @@
+# weekly-report 設定檔（帶去公司後依實際環境修改）
+
+gitlab:
+  # 公司 GitLab 的網址（不含 /api/v4）
+  base_url: "https://gitlab.example.com"
+  # 你在 GitLab 上的 username（MR / issue 依此過濾）
+  username: "your.username"
+  # commits API 的 author 過濾字串（比對 name/email，留空則不收集 commits）
+  commit_author: ""
+
+# 要收集的 repo 清單，填 GitLab 的完整路徑（namespace/project）
+repos:
+  - "group/repo-a"
+  - "group/repo-b"
+  # - "group/repo-c"
+
+# 收集區間：預設抓最近 N 天（collector 也可用 --since / --until 覆蓋）
+days: 7
+
+ppt_generator:
+  # PPT_Generator 後端 API base（含 /api prefix）
+  base_url: "http://localhost:8000/api"
+  # 固定使用的視覺風格與色盤；可先 GET {base_url}/styles 查可用清單
+  style_id: "swiss-minimal"
+  palette_id: "corporate-blue"
+  # 生成輪詢設定
+  poll_interval_seconds: 3
+  poll_timeout_seconds: 600
